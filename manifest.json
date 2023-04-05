@@ -1,0 +1,27 @@
+{
+    "manifest_version": 3,
+    "name": "Cryptojacking Web Extension",
+    "version": "1.0.1",
+    "description": "Detect the presence of illegal browser-based cryptojacking",
+    "background": {
+        "service_worker": "service_worker.js",
+        "type": "module"
+    },
+    "permissions": [
+        "nativeMessaging",
+        "storage",
+        "webRequest",
+        "declarativeNetRequest"
+
+    ],
+    "host_permissions": [
+        "https://*/*"
+    ],
+    "action": {
+        "default_popup": "popup/popup.html"
+    },
+    "content_security_policy": {
+        "extension_pages": "script-src 'self' 'wasm-unsafe-eval'; object-src 'self'"
+    }
+
+}
